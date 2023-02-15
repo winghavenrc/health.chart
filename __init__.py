@@ -3,6 +3,7 @@ from mycroft import MycroftSkill, intent_file_handler
 # import os
 # import openai
 
+
 import json
 import datetime
 import requests
