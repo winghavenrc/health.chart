@@ -1,0 +1,2573 @@
+{
+    "type": "searchset",
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location"
+        },
+        {
+            "relation": "next",
+            "url": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location?continue=D6682237-924B-4EB1-B207-8E5CC972B9F0"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/2a0fb3c9-8f8e-50b4-9b23-58226dc041a1",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "2a0fb3c9-8f8e-50b4-9b23-58226dc041a1",
+                "status": "active",
+                "name": "1 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/c46c539f-d86c-5d36-a0b1-834d95d8b985",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "c46c539f-d86c-5d36-a0b1-834d95d8b985",
+                "status": "active",
+                "name": "1 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Westwood Health Services",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/8f01f47b-a79b-536e-8fa3-1fe4ab35ad14",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "8f01f47b-a79b-536e-8fa3-1fe4ab35ad14",
+                "status": "active",
+                "name": "1 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/3f44bc0e-77b5-53f0-86f8-fe7ad9831022",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "3f44bc0e-77b5-53f0-86f8-fe7ad9831022",
+                "status": "active",
+                "name": "1 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/47a04b02-6ff1-55fe-9047-6af28ccbd83f",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "47a04b02-6ff1-55fe-9047-6af28ccbd83f",
+                "status": "active",
+                "name": "1 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f730fdd2-d3aa-5102-8bb7-009e2fc5ce23",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f730fdd2-d3aa-5102-8bb7-009e2fc5ce23",
+                "status": "active",
+                "name": "10 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/5bec1004-0f4a-5f91-8e66-da6468959deb",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "5bec1004-0f4a-5f91-8e66-da6468959deb",
+                "status": "active",
+                "name": "10 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b8ec9c38-b209-50b7-80d1-08c36e709b1f",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b8ec9c38-b209-50b7-80d1-08c36e709b1f",
+                "status": "active",
+                "name": "10 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/497d8076-92dc-5059-8409-9c0a6d50c6cd",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "497d8076-92dc-5059-8409-9c0a6d50c6cd",
+                "status": "active",
+                "name": "10 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/0a607325-b273-5cae-80e7-bb0ecd91a067",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "0a607325-b273-5cae-80e7-bb0ecd91a067",
+                "status": "active",
+                "name": "11 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/0ada5aae-a6d5-56f3-8b14-37b13250ecbb",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "0ada5aae-a6d5-56f3-8b14-37b13250ecbb",
+                "status": "active",
+                "name": "11 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/246c06a6-a947-587c-a1e8-5ab628e8afd3",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "246c06a6-a947-587c-a1e8-5ab628e8afd3",
+                "status": "active",
+                "name": "11 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/1cac478f-c170-50b3-ae33-b174f13bfbde",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "1cac478f-c170-50b3-ae33-b174f13bfbde",
+                "status": "active",
+                "name": "11 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/8351f41b-bb9d-5022-b442-7da35272e9e6",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "8351f41b-bb9d-5022-b442-7da35272e9e6",
+                "status": "active",
+                "name": "12 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/271c55be-b3aa-54ec-ba1c-b87eb29cbfad",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "271c55be-b3aa-54ec-ba1c-b87eb29cbfad",
+                "status": "active",
+                "name": "12 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/60aa4221-2d24-5140-9603-5310bcf93e89",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "60aa4221-2d24-5140-9603-5310bcf93e89",
+                "status": "active",
+                "name": "12 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b4cd2c12-8aba-5055-89b6-be5b7f0c8400",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b4cd2c12-8aba-5055-89b6-be5b7f0c8400",
+                "status": "active",
+                "name": "12 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/640f494a-af1e-57df-8681-9deaaefce59c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "640f494a-af1e-57df-8681-9deaaefce59c",
+                "status": "active",
+                "name": "14 North",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "617-323-5467"
+                    }
+                ],
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/04c1f453-009d-5098-b1fd-fbbba0ccf05a",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "04c1f453-009d-5098-b1fd-fbbba0ccf05a",
+                "status": "active",
+                "name": "14 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/0377aaf3-1aac-51f1-8021-56293344a275",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "0377aaf3-1aac-51f1-8021-56293344a275",
+                "status": "active",
+                "name": "15 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/146f0c0a-944b-538b-9409-44d03389fc7a",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "146f0c0a-944b-538b-9409-44d03389fc7a",
+                "status": "active",
+                "name": "15 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/51cd9626-914d-51c4-99ca-193a1395dd66",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "51cd9626-914d-51c4-99ca-193a1395dd66",
+                "status": "active",
+                "name": "15 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/a860a4de-c7ae-5134-8f92-d24cc8c7827c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "a860a4de-c7ae-5134-8f92-d24cc8c7827c",
+                "status": "active",
+                "name": "15 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/ca0ddba6-59fc-5511-96ee-30703960e996",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "ca0ddba6-59fc-5511-96ee-30703960e996",
+                "status": "active",
+                "name": "16 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/626a33a5-4e36-50b9-a5e8-a873bee67744",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "626a33a5-4e36-50b9-a5e8-a873bee67744",
+                "status": "active",
+                "name": "2 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/26d722b5-a748-59f3-9887-ed5e584e11ce",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "26d722b5-a748-59f3-9887-ed5e584e11ce",
+                "status": "active",
+                "name": "2 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/c3d3a202-60ad-5848-8adf-0ef6607ceb94",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "c3d3a202-60ad-5848-8adf-0ef6607ceb94",
+                "status": "active",
+                "name": "2 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/bab1dc08-121a-578c-8d03-cf7ed3839605",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "bab1dc08-121a-578c-8d03-cf7ed3839605",
+                "status": "active",
+                "name": "2 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/af78900a-306f-504b-80b8-47553f1aaabe",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "af78900a-306f-504b-80b8-47553f1aaabe",
+                "status": "active",
+                "name": "3 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/91cca00e-f75e-5173-9a4e-c393bdb4af71",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "91cca00e-f75e-5173-9a4e-c393bdb4af71",
+                "status": "active",
+                "name": "3 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/7a111eca-3823-55b4-bc15-afae16096484",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "7a111eca-3823-55b4-bc15-afae16096484",
+                "status": "active",
+                "name": "3 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/24bafce8-5d6b-5177-b538-e2fa76cde08c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "24bafce8-5d6b-5177-b538-e2fa76cde08c",
+                "status": "active",
+                "name": "3 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/06603053-c8e1-5552-9ade-51634ae59535",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "06603053-c8e1-5552-9ade-51634ae59535",
+                "status": "active",
+                "name": "4 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/eefb7ee8-0b25-5bec-9356-384a677a7e53",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "eefb7ee8-0b25-5bec-9356-384a677a7e53",
+                "status": "active",
+                "name": "4 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/0f394670-d586-5757-833f-6016b6ec690a",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "0f394670-d586-5757-833f-6016b6ec690a",
+                "status": "active",
+                "name": "4 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/d87ff6f5-037e-561a-9d76-281a24e5b6c5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "d87ff6f5-037e-561a-9d76-281a24e5b6c5",
+                "status": "active",
+                "name": "4 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/a96e606f-6389-500e-a189-5e837259e0ac",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "a96e606f-6389-500e-a189-5e837259e0ac",
+                "status": "active",
+                "name": "5 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b3ce96f8-2d49-5056-a70b-9bd642b7442e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b3ce96f8-2d49-5056-a70b-9bd642b7442e",
+                "status": "active",
+                "name": "5 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/42d8b1a8-386e-53f4-8507-a0ee70214c97",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "42d8b1a8-386e-53f4-8507-a0ee70214c97",
+                "status": "active",
+                "name": "5 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/94c4e451-5b5b-5d2a-ad66-c60184210af3",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "94c4e451-5b5b-5d2a-ad66-c60184210af3",
+                "status": "active",
+                "name": "5 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/47db864e-40f5-570f-8e25-dcb7523b2973",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "47db864e-40f5-570f-8e25-dcb7523b2973",
+                "status": "active",
+                "name": "6 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f8b35f5f-de04-5cc2-9884-2974661c5a4c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f8b35f5f-de04-5cc2-9884-2974661c5a4c",
+                "status": "active",
+                "name": "6 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/2ca723c0-e034-517a-91f2-d6e5bcdcc187",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "2ca723c0-e034-517a-91f2-d6e5bcdcc187",
+                "status": "active",
+                "name": "6 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f5afb61e-ef6e-5040-98f4-844d0ad9e529",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f5afb61e-ef6e-5040-98f4-844d0ad9e529",
+                "status": "active",
+                "name": "6 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/4c787e19-f4ca-50ba-81b4-80d52bdafc22",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "4c787e19-f4ca-50ba-81b4-80d52bdafc22",
+                "status": "active",
+                "name": "7 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/80950187-7c9f-5423-b70b-e98bb7a0ffe5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "80950187-7c9f-5423-b70b-e98bb7a0ffe5",
+                "status": "active",
+                "name": "7 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f17036c6-5c82-5286-829d-a7db2b3f07d5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f17036c6-5c82-5286-829d-a7db2b3f07d5",
+                "status": "active",
+                "name": "7 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f4cb0927-268f-5bef-a32f-5fa21d17fb22",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f4cb0927-268f-5bef-a32f-5fa21d17fb22",
+                "status": "active",
+                "name": "7 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/6366d40f-e9e2-5420-9ad0-ba5288b7a2b5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "6366d40f-e9e2-5420-9ad0-ba5288b7a2b5",
+                "status": "active",
+                "name": "8 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/becec881-9e84-5223-9ab1-7062fd235fb3",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "becec881-9e84-5223-9ab1-7062fd235fb3",
+                "status": "active",
+                "name": "8 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/41a1dc3e-f257-501f-b2bf-e112dbd981ab",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "41a1dc3e-f257-501f-b2bf-e112dbd981ab",
+                "status": "active",
+                "name": "8 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/ad963062-7bc6-54cd-919f-5c7b5b0143c8",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "ad963062-7bc6-54cd-919f-5c7b5b0143c8",
+                "status": "active",
+                "name": "8 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/ffac1b32-1c1e-55dc-8d74-c9f457720677",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "ffac1b32-1c1e-55dc-8d74-c9f457720677",
+                "status": "active",
+                "name": "9 East",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/349d8685-edca-518f-99ea-cff7eff51394",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "349d8685-edca-518f-99ea-cff7eff51394",
+                "status": "active",
+                "name": "9 North",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/14a02c0c-7c8e-57dd-873f-0666192afc78",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "14a02c0c-7c8e-57dd-873f-0666192afc78",
+                "status": "active",
+                "name": "9 South",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/d93643ac-a690-5d9d-bfd3-c4f89e061a79",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "d93643ac-a690-5d9d-bfd3-c4f89e061a79",
+                "status": "active",
+                "name": "9 West",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/00f9dbba-bd0d-592e-8fe6-5ee4b2125de5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "00f9dbba-bd0d-592e-8fe6-5ee4b2125de5",
+                "status": "active",
+                "name": "Achusnet Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/4983f6bb-e4cb-50b8-97c8-e432d31c491e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "4983f6bb-e4cb-50b8-97c8-e432d31c491e",
+                "status": "active",
+                "name": "Activities",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b8696c56-d5a6-504d-aa30-4e96e31d19d2",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b8696c56-d5a6-504d-aa30-4e96e31d19d2",
+                "status": "active",
+                "name": "Administration",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Skilled Nursing Facility",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f128259d-43ed-5a1e-ab97-fc1618531515",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f128259d-43ed-5a1e-ab97-fc1618531515",
+                "status": "active",
+                "name": "Ambulatory Practice GF",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Ambulatory",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/1b1fe149-098c-56d5-8eab-ff40caf9b103",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "1b1fe149-098c-56d5-8eab-ff40caf9b103",
+                "status": "active",
+                "name": "Assisted Living",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/eb95effc-0e88-5646-882f-67c54ac8d022",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "eb95effc-0e88-5646-882f-67c54ac8d022",
+                "status": "active",
+                "name": "Audiology",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/917ceba8-431e-51fa-9ae2-e8a591da570e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "917ceba8-431e-51fa-9ae2-e8a591da570e",
+                "status": "active",
+                "name": "BBK Unit Location",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "821-3001"
+                    }
+                ],
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Blood Bank Unit Facility",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/4f93dced-74be-518e-a014-9788d3f22778",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "4f93dced-74be-518e-a014-9788d3f22778",
+                "status": "active",
+                "name": "Bristol Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/3492465a-786b-5535-9274-2c347417e2a7",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "3492465a-786b-5535-9274-2c347417e2a7",
+                "status": "active",
+                "name": "Business Office",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Skilled Nursing Facility",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/985bf870-0029-5969-83d9-bdeb6d6546a2",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "985bf870-0029-5969-83d9-bdeb6d6546a2",
+                "status": "active",
+                "name": "Canton Medical Group",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "781-899-3000"
+                    }
+                ],
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Group",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/904077fe-f7e9-510b-819b-3ce0bc578dbf",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "904077fe-f7e9-510b-819b-3ce0bc578dbf",
+                "status": "active",
+                "name": "Cardiac Catheterization Lab",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f1cd517c-4a23-547d-9cae-6377fdefd64c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f1cd517c-4a23-547d-9cae-6377fdefd64c",
+                "status": "active",
+                "name": "Cardiac Rehabilitation",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/1b2332fb-8906-5264-86e0-df72e983f350",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "1b2332fb-8906-5264-86e0-df72e983f350",
+                "status": "active",
+                "name": "Cardiology",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/d8597bb9-53f4-5878-b0ee-7cd679f6d0e1",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "d8597bb9-53f4-5878-b0ee-7cd679f6d0e1",
+                "status": "active",
+                "name": "Carver Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/9945b87e-7590-5693-895a-4f3c0eba5d5c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "9945b87e-7590-5693-895a-4f3c0eba5d5c",
+                "status": "active",
+                "name": "Case Management",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/daab8e8f-28e3-5092-8111-3a1d5ec7ecb0",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "daab8e8f-28e3-5092-8111-3a1d5ec7ecb0",
+                "status": "active",
+                "name": "Childlife Department",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/343cba26-4e2b-5279-870f-389b6b2f8b63",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "343cba26-4e2b-5279-870f-389b6b2f8b63",
+                "status": "active",
+                "name": "Clinical Nutrition",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/14644d0b-27a4-5c82-b1fc-63a9c4f5034e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "14644d0b-27a4-5c82-b1fc-63a9c4f5034e",
+                "status": "active",
+                "name": "Computerized Tomography",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/53b58b7e-3eea-5aff-8ce5-62e53c1a425e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "53b58b7e-3eea-5aff-8ce5-62e53c1a425e",
+                "status": "active",
+                "name": "Coronary Care Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/558eb6d5-4acb-5467-82cc-7da55c0ab517",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "558eb6d5-4acb-5467-82cc-7da55c0ab517",
+                "status": "active",
+                "name": "Cranio-Fascial Center",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/54a23ffa-b310-57f5-80f2-148c7586e250",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "54a23ffa-b310-57f5-80f2-148c7586e250",
+                "status": "active",
+                "name": "Dartmouth Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/74be0459-5551-5282-9d3f-6a73a4627285",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "74be0459-5551-5282-9d3f-6a73a4627285",
+                "status": "active",
+                "name": "Day Hospital",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/44afb93d-97d6-5881-805a-0a517d90ca74",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "44afb93d-97d6-5881-805a-0a517d90ca74",
+                "status": "active",
+                "name": "Diabetes Clinic",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/e8298247-02ef-5075-8d64-2be0ce6b1f41",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "e8298247-02ef-5075-8d64-2be0ce6b1f41",
+                "status": "active",
+                "name": "Diagnostic Imaging",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/8bd87b20-7c5c-5d88-ac57-5d4ee22edca5",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "8bd87b20-7c5c-5d88-ac57-5d4ee22edca5",
+                "status": "active",
+                "name": "Dialysis Clinic",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/471fe06a-5c76-53b2-928b-82f7adeb7b6e",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "471fe06a-5c76-53b2-928b-82f7adeb7b6e",
+                "status": "active",
+                "name": "Emergency Department",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/f8e8a451-455c-5652-83ae-1cb78d8976ca",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "f8e8a451-455c-5652-83ae-1cb78d8976ca",
+                "status": "active",
+                "name": "Emergency Department",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Westwood Health Services",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b0275214-4a3e-5906-a1c1-32c4606d1fc0",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b0275214-4a3e-5906-a1c1-32c4606d1fc0",
+                "status": "active",
+                "name": "Emergency Room",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/8558ca85-562c-5519-815d-f6b0b7951330",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "8558ca85-562c-5519-815d-f6b0b7951330",
+                "status": "active",
+                "name": "Framingham Physician Practice",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Framingham Physicians",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/91b6a5ae-280f-53c1-8014-bbebceb6d612",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "91b6a5ae-280f-53c1-8014-bbebceb6d612",
+                "status": "active",
+                "name": "Gastroenterology",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/4de49214-0e70-5009-8784-601c37fa9676",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "4de49214-0e70-5009-8784-601c37fa9676",
+                "status": "active",
+                "name": "Hemo/Oncology Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/0d4619d0-2e02-5703-bd63-91306c84a854",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "0d4619d0-2e02-5703-bd63-91306c84a854",
+                "status": "active",
+                "name": "HIM Department",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/27cb85b7-0119-5821-88d5-3068332dc3c2",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "27cb85b7-0119-5821-88d5-3068332dc3c2",
+                "status": "active",
+                "name": "Home Care",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Home Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/1c0572e1-b5a2-5e18-8caf-f1b884b88ebb",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "1c0572e1-b5a2-5e18-8caf-f1b884b88ebb",
+                "status": "active",
+                "name": "Home Health",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/49593ca6-1853-57b7-a622-f622c0046415",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "49593ca6-1853-57b7-a622-f622c0046415",
+                "status": "active",
+                "name": "Inpatient Rehabilitation",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b7eb6b17-c5c0-53b9-a05b-818bc76249a4",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b7eb6b17-c5c0-53b9-a05b-818bc76249a4",
+                "status": "active",
+                "name": "Intensive Care Unit",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/b2d35cc3-cf25-5a83-801e-46eed698bee9",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "b2d35cc3-cf25-5a83-801e-46eed698bee9",
+                "status": "active",
+                "name": "Lab Reference Testing",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/e6a856a9-cf19-5f91-a294-56d5a08e1b12",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "e6a856a9-cf19-5f91-a294-56d5a08e1b12",
+                "status": "active",
+                "name": "Laboratory",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "558-112-1223"
+                    }
+                ],
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/41bd2753-9b39-50db-b30b-c105088b6c30",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "41bd2753-9b39-50db-b30b-c105088b6c30",
+                "status": "active",
+                "name": "Laboratory Census",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Lab Census Facility",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/c14f4b69-4781-53a0-9aa3-b109d47c4f0b",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "c14f4b69-4781-53a0-9aa3-b109d47c4f0b",
+                "status": "active",
+                "name": "Long Term Acute Care",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "South Coast Continuing Care",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/03705451-bb77-5433-84dc-51fe3a75c01d",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "03705451-bb77-5433-84dc-51fe3a75c01d",
+                "status": "active",
+                "name": "Long Term Care Hospital",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Norwood Physicians Office",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/ac395f74-dad8-525e-83dd-8e5c24f17b47",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "ac395f74-dad8-525e-83dd-8e5c24f17b47",
+                "status": "active",
+                "name": "Mammography",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Canton Medical Center",
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/5ba38fa2-2464-5332-9529-84d9ade5708c",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "5ba38fa2-2464-5332-9529-84d9ade5708c",
+                "status": "active",
+                "name": "Medical Director",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        },
+        {
+            "fullUrl": "https://greenfield-apis.meditech.com:443/v1/argoScheduling/STU3/Location/6c344e09-ab98-53af-8443-b2bc2c0ef280",
+            "search": {
+                "mode": "match"
+            },
+            "resource": {
+                "id": "6c344e09-ab98-53af-8443-b2bc2c0ef280",
+                "status": "active",
+                "name": "Medical Records",
+                "managingOrganization": {
+                    "reference": "#crs0",
+                    "display": "Organization"
+                },
+                "contained": [
+                    {
+                        "active": true,
+                        "name": "Acute",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "1 MAIN ST."
+                                ],
+                                "city": "BRIGHTON",
+                                "state": "MA",
+                                "postalCode": "02135"
+                            }
+                        ],
+                        "id": "crs0",
+                        "resourceType": "Organization"
+                    }
+                ],
+                "resourceType": "Location"
+            }
+        }
+    ],
+    "total": 100,
+    "resourceType": "Bundle"
+}
