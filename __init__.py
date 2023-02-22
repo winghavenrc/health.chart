@@ -79,7 +79,8 @@ def get_care_team(self):
     for provider in care_team['entry']:
       self.log.info(provider)
       name = provider['name']
-      name_dct = {name[i]: name[i + 1] for i in range(0, len(name), 2)}
+      it = iter(name)
+      name_dct = dict(zip(it, it))
       specialty = provider['specialty']
       self.log.info(name)
       self.log.info(name_dct)
