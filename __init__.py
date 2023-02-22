@@ -20,7 +20,7 @@ class HealthChart(MycroftSkill):
         self.visit_types = ['health concern', 'wellness exam',
                             'vaccination', 'screening mammography']
 
-        self.speak_dialog('visit.type', wait=True)
+        self.speak_dialog('visit.type', wait=False)
 
         visit_type = self.ask_selection(self.visit_types, min_conf=.4)
 
@@ -82,8 +82,8 @@ def get_care_team(self):
       self.log.info(name)
       self.log.info(specialty)
 
-      lastname = name['family']
-      firstname = name['given'][0]
+      lastname = provider['name']['family']
+      firstname = provider['name']['given'][0]
       fullname = firstname + " " + lastname + " " + specialty;
       self.log.info(fullname)
       self.provider_list.append(specialty)
