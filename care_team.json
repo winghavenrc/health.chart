@@ -1,0 +1,45 @@
+{
+    "entry": [
+        {
+            "active": true,
+            "id": "4a0e5dc0-3cd1-523d-88b4-3e1065b86dd9",
+            "name": [
+                {
+                    "family": "Fisher",
+                    "given": [
+                        "Lesley"
+                    ]
+                }
+            ],
+            "specialty": "Family Medicine"
+        },
+        {
+            "active": true,
+            "id": "5563b254-66b1-5203-80e3-bef0be824970",
+            "name": [
+                {
+                    "family": "Labadie",
+                    "given": [
+                        "Keith"
+                    ]
+                }
+            ],
+            "specialty": "Cardiology"
+        },
+        {
+            "active": true,
+            "id": "fddba67e-f23d-5c6d-8c8a-4aca612964ba",
+            "name": [
+                {
+                    "family": "Schneider",
+                    "given": [
+                        "Nicole"
+                    ]
+                }
+            ],
+            "specialty": "OB-GYN"
+        }
+    ],
+    "total": 3,
+    "resourceType": "Bundle"
+}
