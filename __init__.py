@@ -77,13 +77,13 @@ def get_care_team(self):
 # nested dictionary for loop can be used
 
     for provider in care_team['entry']:
-      name = provider['name']
+      name = dict(provider['name'])
       specialty = provider['specialty']
       self.log.info(name)
       self.log.info(specialty)
 
-      lastname = provider['name']['family']
-      firstname = provider['name']['given'][0]
+      lastname = name['family']
+      firstname = name['given'][0]
       fullname = firstname + " " + lastname + " " + specialty;
       self.log.info(fullname)
       self.provider_list.append(specialty)
@@ -201,19 +201,14 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
             # means there's no appointments available
             return availableTimes
 
-        start = []
-        id = []
-
         for index in range(0, total):
 
             self.log.info(apptSlots["entry"][index]["resource"])
 
-            localStart_dt = datetime.datetime.strptime(
-                apptSlots["entry"][index]["resource"]["start"], "%Y-%m-%dT%H:%M:%S%z")
+            localStart_dt = datetime.datetime.strptime(apptSlots["entry"][index]["resource"]["start"], "%Y-%m-%dT%H:%M:%S%z")
             self.log.info(localStart_dt)
             meridien = localStart_dt.strftime("%p")
-            localStart_str = datetime.datetime.strftime(
-                localStart_dt, "%A %B %-d %-I:%-M %p")
+            localStart_str = datetime.datetime.strftime(localStart_dt, "%A %B %-d %-I:%-M %p")
 
             save = False
 
