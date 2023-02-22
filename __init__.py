@@ -61,9 +61,9 @@ def get_care_team(self):
 
   self.log.info(self.file_system.path)
   self.log.info(self.root_dir)
-
-  with self.file_system.open(self.root_dir+'care_team.json', "r") as care_team_file:
-#            f = open('care_team.json')
+  file = self.root_dir+"/care_team.json"
+#  with self.file_system.open(self.root_dir+'care_team.json', "r") as care_team_file:
+  with open(file, "r") as care_team_file:
 
 # returns JSON object as
 # a dictionary
