@@ -83,7 +83,9 @@ def get_care_team(self):
       self.log.info(specialty)
 
       lastname = name['family']
+      self.log.info(lastname)
       firstname = name['given'][0]
+      self.log.info(firstname)
       fullname = firstname + " " + lastname + " " + specialty;
       self.log.info(fullname)
       self.provider_list.append(specialty)
