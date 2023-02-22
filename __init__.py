@@ -35,8 +35,7 @@ class HealthChart(MycroftSkill):
         else:
 
             self.provider_list = []
-
-            if get_care_team(self.provider_list) is True:
+            if get_care_team(self) is True:
 
                 self.log.info(self.provider_list)
                 self.speak_dialog(
