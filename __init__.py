@@ -80,15 +80,15 @@ def get_care_team(self):
       self.log.info(provider)
       name = provider['name']
 
-      name_dct = name[0]
+      name_dct = dict(name[0])
       specialty = provider['specialty']
       self.log.info(name)
       self.log.info(name_dct)
       self.log.info(specialty)
 
-      lastname = name['family']
+      lastname = name_dct['family']
       self.log.info(lastname)
-      firstname = name['given'][0]
+      firstname = name_dct['given'][0]
       self.log.info(firstname)
       fullname = firstname + " " + lastname + " " + specialty;
       self.log.info(fullname)
