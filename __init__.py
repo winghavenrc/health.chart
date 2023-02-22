@@ -77,9 +77,12 @@ def get_care_team(self):
 # nested dictionary for loop can be used
 
     for provider in care_team['entry']:
-      name = dict(provider['name'])
+      self.log.info(provider)
+      name = provider['name']
+      name_dct = map(lambda i: (name[i], name[i+1]), range(len(name)-1)[::2])
       specialty = provider['specialty']
       self.log.info(name)
+      self.log.info(name_dct)
       self.log.info(specialty)
 
       lastname = name['family']
