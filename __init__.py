@@ -60,8 +60,9 @@ class HealthChart(MycroftSkill):
 def get_care_team(self):
 
   self.log.info(self.file_system.path)
+  self.log.info(self.root_dir)
 
-  with self.file_system.open('care_team.json', "r") as care_team_file:
+  with self.file_system.open(self.root_dir+'care_team.json', "r") as care_team_file:
 #            f = open('care_team.json')
 
 # returns JSON object as
