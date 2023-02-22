@@ -80,7 +80,7 @@ def get_care_team(self):
       self.log.info(provider)
       name = provider['name']
 
-      name_dct = name(0)
+      name_dct = name[0]
       specialty = provider['specialty']
       self.log.info(name)
       self.log.info(name_dct)
