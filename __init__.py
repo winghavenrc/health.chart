@@ -92,6 +92,9 @@ def get_care_team(self):
       self.log.info(firstname)
       fullname = firstname + " " + lastname + " " + specialty;
       self.log.info(fullname)
+
+      self.provider_list.append(firstname)
+      self.provider_list.append(lastname)
       self.provider_list.append(specialty)
 
     care_team_file.close()
