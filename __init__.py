@@ -214,6 +214,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 
         time = []
         id = []
+        date = ""
 
         for index in range(0, total):
 
@@ -240,7 +241,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 #                slot = {"start": localStart_str, "id": apptSlots["entry"][index]["resource"]["id"]}
 #                availableTimes.append(slot)
 
-        availableSlots = { "date": searchDate, "time": time, "id": id }
+        availableSlots = { "date": date, "time": time, "id": id }
         self.log.info(availableSlots)
 
     else:
