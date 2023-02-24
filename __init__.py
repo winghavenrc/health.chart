@@ -40,13 +40,13 @@ class HealthChart(MycroftSkill):
                 self.speak_dialog(
                     "<speak>I can schedule with any of your currently active providers. <break time='.3s' />Which one of these do you want to schedule with? </speak>", wait=False)
 
-                selected = self.ask_selection(self.provider_list,min_conf=0.6)
+                selected = self.ask_selection(self.provider_list,min_conf=0.5)
                 self.log.info(selected)
-                self.speak_dialog('get.provider', data={"provider": selected}, expect_response=True, wait=True)
+                self.speak_dialog('get.provider', data={"provider": selected}, expect_response=True, wait=False)
 
 #               find first appointments available from today
                 availableSlots = find_first(self)
-                self.speak_dialog('speak.times', data={"total": len(availableSlots["time"])}, expect_response=False, wait=False)
+                self.speak_dialog('speak.times', data={"total": len(availableSlots["time"]), "date": availableSlots["date"]}, expect_response=False, wait=False)
                 visit_time = self.ask_selection(availableSlots["time"], min_conf=.6, numeric=False)
 
 #                for index in range(0, len(timeSlots)):
@@ -120,8 +120,8 @@ def find_first(self):
 
     for day in range(1, 5):
 
-        availableTimes = mt_find_available_appts(self, searchDate, 'pm', 'America/Chicago')
-        if len(availableTimes) > 0:
+        availableSlots = mt_find_available_appts(self, searchDate, 'pm', 'America/Chicago')
+        if len(availableSlots["time"]) > 0:
             self.log.info(searchDate)
 #               meditech.revokeToken(handlerInput); // see revokeToken for why to call this now
             break
@@ -214,6 +214,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 
         time = []
         id = []
+
         for index in range(0, total):
 
             self.log.info(apptSlots["entry"][index]["resource"])
@@ -222,6 +223,8 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
             self.log.info(localStart_dt)
             meridien = localStart_dt.strftime("%p")
             localStart_str = datetime.datetime.strftime(localStart_dt, "%A %B %-d %-I:%-M %p")
+            date = datetime.datetime.strftime(localStart_dt, "%A %B %-d")
+            start = datetime.datetime.strftime(localStart_dt, "%-I:%-M %p")
 
             save = False
 
@@ -232,12 +235,12 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
                 if meridien == "PM":
                     save = True
             if save == True:
-                time.append(localStart_str)
+                time.append(start)
                 id.append(apptSlots["entry"][index]["resource"]["id"])
 #                slot = {"start": localStart_str, "id": apptSlots["entry"][index]["resource"]["id"]}
 #                availableTimes.append(slot)
 
-        availableSlots = { "time": time, "id": id }
+        availableSlots = { "date": searchDate, "time": time, "id": id }
         self.log.info(availableSlots)
 
     else:
