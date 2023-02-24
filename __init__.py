@@ -34,7 +34,6 @@ class HealthChart(MycroftSkill):
 # Opening JSON file
         else:
 
-            self.provider_list = []
             if get_care_team(self) is True:
 
                 self.log.info(self.provider_list)
@@ -45,9 +44,9 @@ class HealthChart(MycroftSkill):
                 self.speak_dialog('get.provider', data={"provider": selected}, expect_response=True, wait=True)
 
 #               find first appointments available from today
-                self.timeSlots = find_first(self)
-                self.speak_dialog('speak.times', data={"total": len(self.timeSlots)}, expect_response=False, wait=False)
-                visit_time = self.ask_selection(self.timeSlots, min_conf=.6, numeric=True)
+                availableTimes = find_first(self)
+                self.speak_dialog('speak.times', data={"total": len(availableTimes.start)}, expect_response=False, wait=False)
+                visit_time = self.ask_selection(availableTimes.start, min_conf=.6, numeric=True)
 
 #                for index in range(0, len(timeSlots)):
 #                    self.speak_dialog('speak.timeslots', data={"slot": timeSlots[index]["start"]}, expect_response=False, wait=False)
@@ -57,6 +56,8 @@ class HealthChart(MycroftSkill):
 
 
 def get_care_team(self):
+  
+  self.provider_list = []
 
   self.log.info(self.file_system.path)
   self.log.info(self.root_dir)
@@ -81,15 +82,16 @@ def get_care_team(self):
 
       name_dct = dict(name[0])
       specialty = provider['specialty']
-      self.log.info(name)
-      self.log.info(name_dct)
-      self.log.info(specialty)
+#      self.log.info(name)
+#      self.log.info(name_dct)
+#      self.log.info(specialty)
 
       lastname = name_dct['family']
-      self.log.info(lastname)
+#      self.log.info(lastname)
       firstname = name_dct['given'][0]
-      self.log.info(firstname)
+#      self.log.info(firstname)
       fullname = firstname + " " + lastname + ", " + specialty;
+
       self.log.info(fullname)
 
       self.provider_list.append(fullname)
@@ -117,15 +119,13 @@ def find_first(self):
 
     for day in range(1, 5):
 
-        availableTimes = mt_find_available_appts(
-            self, searchDate, 'pm', 'America/Chicago')
+        availableTimes = mt_find_available_appts(self, searchDate, 'pm', 'America/Chicago')
         if len(availableTimes) > 0:
             self.log.info(searchDate)
 #               meditech.revokeToken(handlerInput); // see revokeToken for why to call this now
             break
 
-        searchDate = datetime.date(
-            searchDate.year, searchDate.month, searchDate.day+1)
+        searchDate = datetime.date(searchDate.year, searchDate.month, searchDate.day+1)
 
     return availableTimes
 
@@ -134,7 +134,8 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 
     # for a given searchDate
 
-    availableTimes = []
+#    availableTimes = []
+    availableTimes = {}
 
     # Get a Meditech token
 
@@ -210,6 +211,8 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
             # means there's no appointments available
             return availableTimes
 
+        time = []
+        id = []
         for index in range(0, total):
 
             self.log.info(apptSlots["entry"][index]["resource"])
@@ -228,13 +231,12 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
                 if meridien == "PM":
                     save = True
             if save == True:
-                slot = {"start": localStart_str,
-                        "id": apptSlots["entry"][index]["resource"]["id"]}
-                availableTimes.append(slot)
-#        start.append(localStart);
-#        id.append(apptSlots["entry"][index]["resource"]["id"]);
+                time.append(localStart_str)
+                id.append(apptSlots["entry"][index]["resource"]["id"])
+#                slot = {"start": localStart_str, "id": apptSlots["entry"][index]["resource"]["id"]}
+#                availableTimes.append(slot)
 
-#    availableTimes = { "start": start, "id": id }
+        availableTimes = { "start": start, "id": id }
         self.log.info(availableTimes)
 
     else:
