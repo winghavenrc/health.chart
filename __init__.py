@@ -128,7 +128,7 @@ def find_first(self):
 
         searchDate = datetime.date(searchDate.year, searchDate.month, searchDate.day+1)
 
-    return availableTimes
+    return availableSlots
 
 
 def mt_find_available_appts(self, searchDate, ampm, userTimezone):
@@ -136,7 +136,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
     # for a given searchDate
 
 #    availableTimes = []
-    availableSlots = {}
+    availableSlots = {"date": "", "time": [], "id": []}
 
     # Get a Meditech token
 
