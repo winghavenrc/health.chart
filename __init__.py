@@ -39,7 +39,7 @@ class HealthChart(MycroftSkill):
 
                 self.log.info(self.provider_list)
                 self.speak_dialog(
-                    "I can schedule with any of your currently active providers. Which one of these do you want to schedule with...", wait=False)
+                    "<speak>I can schedule with any of your currently active providers. <break time='.3s' />Which one of these do you want to schedule with? </speak>", wait=False)
 
                 selected = self.ask_selection(self.provider_list,min_conf=0.6)
                 self.speak_dialog('get.provider', data={
