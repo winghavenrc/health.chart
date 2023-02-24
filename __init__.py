@@ -46,7 +46,7 @@ class HealthChart(MycroftSkill):
 
 #               find first appointments available from today
                 self.timeSlots = find_first(self)
-                self.speak_dialog('speak.times', data={"total": len(timeSlots)}, expect_response=False, wait=False)
+                self.speak_dialog('speak.times', data={"total": len(self.timeSlots)}, expect_response=False, wait=False)
                 visit_time = self.ask_selection(self.timeSlots, min_conf=.6, numeric=True)
 
 #                for index in range(0, len(timeSlots)):
