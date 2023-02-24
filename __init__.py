@@ -39,9 +39,9 @@ class HealthChart(MycroftSkill):
 
                 self.log.info(self.provider_list)
                 self.speak_dialog(
-                    "I can schedule with any of your currently active providers. Which one of these do you want to schedule with...", wait=True)
+                    "I can schedule with any of your currently active providers. Which one of these do you want to schedule with...", wait=False)
 
-                selected = self.ask_selection(self.provider_list)
+                selected = self.ask_selection(self.provider_list,min_conf=0.6)
                 self.speak_dialog('get.provider', data={
                                   "provider": selected}, expect_response=True, wait=True)
 
@@ -90,12 +90,13 @@ def get_care_team(self):
       self.log.info(lastname)
       firstname = name_dct['given'][0]
       self.log.info(firstname)
-      fullname = firstname + " " + lastname + " " + specialty;
+      fullname = firstname + " " + lastname + ", " + specialty;
       self.log.info(fullname)
 
-      self.provider_list.append(firstname)
-      self.provider_list.append(lastname)
-      self.provider_list.append(specialty)
+      self.provider_list.append(fullname)
+#      self.provider_list.append(firstname)
+#     self.provider_list.append(lastname)
+#      self.provider_list.append(specialty)
 
     care_team_file.close()
     return True
