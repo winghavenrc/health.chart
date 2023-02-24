@@ -44,9 +44,9 @@ class HealthChart(MycroftSkill):
                 self.speak_dialog('get.provider', data={"provider": selected}, expect_response=True, wait=True)
 
 #               find first appointments available from today
-                availableTimes = find_first(self)
-                self.speak_dialog('speak.times', data={"total": len(availableTimes.start)}, expect_response=False, wait=False)
-                visit_time = self.ask_selection(availableTimes.start, min_conf=.6, numeric=True)
+                availableSlots = find_first(self)
+                self.speak_dialog('speak.times', data={"total": len(availableSlots.time)}, expect_response=False, wait=False)
+                visit_time = self.ask_selection(availableSlots.time, min_conf=.6, numeric=True)
 
 #                for index in range(0, len(timeSlots)):
 #                    self.speak_dialog('speak.timeslots', data={"slot": timeSlots[index]["start"]}, expect_response=False, wait=False)
@@ -135,7 +135,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
     # for a given searchDate
 
 #    availableTimes = []
-    availableTimes = {}
+    availableSlots = {}
 
     # Get a Meditech token
 
@@ -209,7 +209,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
         total = apptSlots["total"]
         if total == 0:
             # means there's no appointments available
-            return availableTimes
+            return availableSlots
 
         time = []
         id = []
@@ -236,14 +236,14 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 #                slot = {"start": localStart_str, "id": apptSlots["entry"][index]["resource"]["id"]}
 #                availableTimes.append(slot)
 
-        availableTimes = { "start": start, "id": id }
-        self.log.info(availableTimes)
+        availableSlots = { "start": start, "id": id }
+        self.log.info(availableSlots)
 
     else:
         # Handle error
         self.log.info(response.status_code)
 
-    return availableTimes
+    return availableSlots
 
 
 def create_skill():
