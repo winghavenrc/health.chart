@@ -236,7 +236,7 @@ def mt_find_available_appts(self, searchDate, ampm, userTimezone):
 #                slot = {"start": localStart_str, "id": apptSlots["entry"][index]["resource"]["id"]}
 #                availableTimes.append(slot)
 
-        availableSlots = { "start": start, "id": id }
+        availableSlots = { "time": time, "id": id }
         self.log.info(availableSlots)
 
     else:
