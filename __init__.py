@@ -122,7 +122,7 @@ def find_first(self):
 
         availableSlots = mt_find_available_appts(self, searchDate, 'pm', 'America/Chicago')
         if len(availableSlots["time"]) > 0:
-            self.log.info(searchDate)
+            self.log.info(availableSlots["date"])
 #               meditech.revokeToken(handlerInput); // see revokeToken for why to call this now
             break
 
