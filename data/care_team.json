@@ -18,9 +18,9 @@
             "id": "5563b254-66b1-5203-80e3-bef0be824970",
             "name": [
                 {
-                    "family": "Labadie",
+                    "family": "Labadee",
                     "given": [
-                        "Keith"
+                        "Robert"
                     ]
                 }
             ],
@@ -31,13 +31,13 @@
             "id": "fddba67e-f23d-5c6d-8c8a-4aca612964ba",
             "name": [
                 {
-                    "family": "Schneider",
+                    "family": "Smith",
                     "given": [
                         "Nicole"
                     ]
                 }
             ],
-            "specialty": "OB-GYN"
+            "specialty": "O.B.-G.Y.N."
         }
     ],
     "total": 3,
