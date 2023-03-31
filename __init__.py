@@ -84,20 +84,16 @@ class HealthChart(MycroftSkill):
                 while True:
                     available_slots = find_times(self, search_date, ampm)
                     if len(available_slots["times"]) > 0:
-                        # self.speak_dialog('speak.foundtimes',
-                        #                   data={"total": len(available_slots["times"]), "date": available_slots["date"]},
-                        #                   expect_response=False, wait=True)
-                        self.speak_dialog('speak.foundtimes',
-                                          data={
-                                              #    "total": len(available_slots["times"]),
-                                              "date": available_slots["date"], "times": available_slots["times"]},
+                        self.speak_dialog('speak.foundtimes', data={
+                                        "date": available_slots["date"], "times": available_slots["times"]},
                                           expect_response=False, wait=True)
                         # for idx in range(0, len(available_slots["times"])):
                         #     self.speak(available_slots["times"][idx], expect_response=False, wait=True)
                         visit_time = self.get_response('get.appt_time', num_retries=2)
                         self.log.info(f"visit time = {visit_time}")
 
-                        ext_time = mycroft.util.extract_datetime(visit_time, datetime.datetime.today())
+                        ext_time = mycroft.util.extract_datetime(visit_time,
+                                                                 datetime.datetime.fromordinal(available_slots['ord']))
                         if ext_time is None:
                             # Define the regular expression pattern for the time string
                             pattern = r"(\d{1,2})\s*([ap])\s*([mM])"
@@ -108,22 +104,36 @@ class HealthChart(MycroftSkill):
 
                         self.log.info(f"extracted time = {ext_time}")
 
-                        if ext_time is None:
-                            self.log.info("Breaking time loop")
-                            break
+                        if ext_time is not None:
+                            search_date = ext_time[0].date()
+                            visit_time = ext_time[0].time()
+                            self.log.info(f"extracted search date = {search_date}")
+                            self.log.info(f"extracted search time = {visit_time}")
 
-                        search_date = ext_time[0].date()
-                        visit_time = ext_time[0].time()
-                        self.log.info(f"extracted search date = {search_date}")
-                        self.log.info(f"extracted search time = {visit_time}")
+                            date = ext_time[0].strftime("%A %B %-d")
+                            self.log.info(f"formatted date = {date}")
 
-                        date = datetime.datetime.strftime(ext_time[0], "%A %B %-d")
-                        self.log.info(f"formatted date = {date}")
+                            req_time = ext_time[0].strftime("%-I:%-M %p")
+                            meridien = ext_time[0].strftime("%p")
 
-                        self.log.info(f"ordinal date of times {available_slots['ord']}")
-                        self.log.info(f"ordinal of extracted date {datetime.datetime.toordinal(date)}")
-
-                        self.log.info("Need to get more times!!!!!")
+                            if prep_time(self, req_time, meridien) in available_slots["times"]:
+                                self.log.info(f"NEED TO BOOK THIS TIME!!!!")
+                                break
+                            else:
+                                """ Are you wanting a different date?"""
+                                self.log.info(f"available_slots[ord] = {available_slots['ord']}")
+                                self.log.info(f"requested date ord = {search_date.toordinal()}")
+                                if available_slots["ord"] == search_date.toordinal():
+                                    self.speak_dialog('invalid.time', data={"time": req_time}, expect_response=False,
+                                                      wait=False)
+                                else:
+                                    self.log.info("Need to get more times on a different date!!!")
+                        else:
+                            self.log.info("No time extracted")
+                            if self.voc_match(visit_time, "repeat"):
+                                pass
+                            else:
+                                break
 
     def converse(self, message=None):
         self.log.info(f"message.data = {message.data}")
@@ -184,7 +194,11 @@ def find_times(self, search_date, ampm):
     availableslots = None
 
     if not search_date:
+        """ Always start with tomorrow - too late to schedule for today 
+        """
         search_date = datetime.date.today()
+        current = datetime.date.toordinal(search_date)
+        search_date = datetime.date.fromordinal(current + 1)
 
     # self.log.info(today)
     # self.log.info(tomorrow)
@@ -211,7 +225,7 @@ def mt_find_available_appts(self, searchdate, ampm):
     # for a given searchDate
 
     #    availabletimes = []
-    availableslots = {"date": "", "times": [], "id": []}
+    availableslots = {"date": "", "ord": 0, "times": [], "id": []}
 
     # Get a Meditech token
 
@@ -314,18 +328,14 @@ def mt_find_available_appts(self, searchdate, ampm):
             self.log.info('meridien %s', meridien)
 
             # localstart_str = datetime.datetime.strftime(start_dt, "%A %B %-d %-I:%-M %p")
-            date = datetime.datetime.strftime(localstart_dt, "%A %B %-d")
-            start = datetime.datetime.strftime(localstart_dt, "%-I:%-M %p")
+            # date = datetime.datetime.strftime(localstart_dt, "%A %B %-d")
+            # start = datetime.datetime.strf
+            date = localstart_dt.strftime("%A %B %-d")
+            start = localstart_dt.strftime("%-I:%-M %p")
             self.log.info('date %s', date)
             self.log.info('start %s', start)
 
-            # if on the hour, strip the zero - the TTS has trouble with that
-            hour = start.split(':')
-            mins = hour[1].split()
-            if mins[0] == '0' or mins[0] == '00':
-                start = hour[0] + ' '
-            else:
-                start = hour[0] + ':' + mins[0] + ' '
+            start = prep_time(self, start, meridien)
 
             save = False
 
@@ -339,8 +349,6 @@ def mt_find_available_appts(self, searchdate, ampm):
                 save = True
 
             if save:
-                start += " " + meridien
-                start += ',,'  # some delays since SSML isn't supported yet
                 times.append(start)
                 apptid.append(apptslots["entry"][index]["resource"]["id"])
 
@@ -352,6 +360,20 @@ def mt_find_available_appts(self, searchdate, ampm):
         self.log.info(response.status_code)
 
     return availableslots
+
+
+def prep_time(self, start, meridien):
+    # if on the hour, strip the zero - the TTS has trouble with that
+    hour = start.split(':')
+    mins = hour[1].split()
+    if mins[0] == '0' or mins[0] == '00':
+        start = hour[0] + ' '
+    else:
+        start = hour[0] + ':' + mins[0] + ' '
+    start += " " + meridien
+    start += ',,'  # some delays since SSML isn't supported yet
+
+    return start
 
 
 def create_skill():
