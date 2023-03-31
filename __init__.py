@@ -1,5 +1,6 @@
 import datetime
 import json
+import re
 
 import requests
 from mycroft.skills import MycroftSkill, intent_handler
@@ -33,12 +34,12 @@ class HealthChart(MycroftSkill):
 
         self.log.info('My message: %s', message)
 
-        self.speak_dialog('chart.health', expect_response=False, wait=False)
+        self.speak_dialog('chart.health', {'name': 'randy'}, expect_response=False, wait=False)
 
         self.visit_types = ['health concern', 'wellness exam',
                             'vaccination', 'screening mammography']
 
-        self.speak_dialog('visit.type', expect_response=False, wait=True)
+        self.speak_dialog('visit.type', expect_response=True, wait=False)
         # mycroft.audio.wait_while_speaking()
 
         visit_type = self.ask_selection(self.visit_types, min_conf=.4)
@@ -56,14 +57,12 @@ class HealthChart(MycroftSkill):
 
             if get_care_team(self) is True:
                 self.log.info(self.provider_list)
-                self.speak_dialog(
-                    "I can schedule with any of your currently active providers. Which one "
-                    "of these do you want to schedule with?", expect_response=False, wait=False)
+                self.speak_dialog('get.provider', expect_response=False, wait=True)
 
                 selected = self.ask_selection(self.provider_list, min_conf=0.4)
                 self.log.info(selected)
 
-                self.speak_dialog('get.ampm', expect_response=False, wait=True)
+                self.speak_dialog('get.ampm', expect_response=False, wait=False)
                 ampm_types = ['morning', 'afternoon', 'any time']
                 ampm = self.ask_selection(ampm_types, min_conf=.5)
                 if ampm == 'morning':
@@ -72,7 +71,7 @@ class HealthChart(MycroftSkill):
                     ampm = 'pm'
                 else:
                     ampm = 'day'
-                self.log.info("ask_selection ampm = %s", ampm)
+                self.log.info(f"ask_selection ampm = {ampm}")
 
                 # ampm = self.get_response('get.ampm', num_retries=2)
                 # self.log.info("get_response ampm = %s", ampm)
@@ -80,27 +79,58 @@ class HealthChart(MycroftSkill):
                 # self.log.info("matched ampm = %s", ampm)
 
                 #               find first appointments available from today
-                available_slots = find_first(self, ampm)
-                if len(available_slots["time"]) > 0:
-                    self.speak_dialog('speak.foundtimes',
-                                      data={"total": len(available_slots["time"]), "date": available_slots["date"]},
-                                      expect_response=False, wait=True)
-                    # self.speak_dialog('speak.foundtimes',
-                    #                   data={"total": len(available_slots["time"]),
-                    #                         "date": available_slots["date"], "times": available_slots["time"]},
-                    #                   expect_response=False, wait=False)
-                    for idx in range(0, len(available_slots["time"])):
-                        self.speak(available_slots["time"][idx], expect_response=False, wait=True)
-                    visit_time = self.get_response('get.appt_time', num_retries=2)
-                    self.log.info("visit time %s", visit_time)
-                    ext_time = mycroft.util.extract_datetime(visit_time)
-                    self.log.info("extracted time %s", ext_time)
+                search_date = None
+
+                while True:
+                    available_slots = find_times(self, search_date, ampm)
+                    if len(available_slots["times"]) > 0:
+                        # self.speak_dialog('speak.foundtimes',
+                        #                   data={"total": len(available_slots["times"]), "date": available_slots["date"]},
+                        #                   expect_response=False, wait=True)
+                        self.speak_dialog('speak.foundtimes',
+                                          data={
+                                              #    "total": len(available_slots["times"]),
+                                              "date": available_slots["date"], "times": available_slots["times"]},
+                                          expect_response=False, wait=True)
+                        # for idx in range(0, len(available_slots["times"])):
+                        #     self.speak(available_slots["times"][idx], expect_response=False, wait=True)
+                        visit_time = self.get_response('get.appt_time', num_retries=2)
+                        self.log.info(f"visit time = {visit_time}")
+
+                        ext_time = mycroft.util.extract_datetime(visit_time, datetime.datetime.today())
+                        if ext_time is None:
+                            # Define the regular expression pattern for the time string
+                            pattern = r"(\d{1,2})\s*([ap])\s*([mM])"
+
+                            # Replace the pattern in the input string with the desired format
+                            visit_time = re.sub(pattern, r'\1 \2\3', visit_time)
+                            ext_time = mycroft.util.extract_datetime(visit_time)
+
+                        self.log.info(f"extracted time = {ext_time}")
+
+                        if ext_time is None:
+                            self.log.info("Breaking time loop")
+                            break
+
+                        search_date = ext_time[0].date()
+                        visit_time = ext_time[0].time()
+                        self.log.info(f"extracted search date = {search_date}")
+                        self.log.info(f"extracted search time = {visit_time}")
+
+                        date = datetime.datetime.strftime(ext_time[0], "%A %B %-d")
+                        self.log.info(f"formatted date = {date}")
+
+                        self.log.info(f"ordinal date of times {available_slots['ord']}")
+                        self.log.info(f"ordinal of extracted date {datetime.datetime.toordinal(date)}")
+
+                        self.log.info("Need to get more times!!!!!")
 
     def converse(self, message=None):
         self.log.info(f"message.data = {message.data}")
         for utterance in message.data.get("utterances"):
             if self.voc_match(utterance, "repeat"):
-                self.log.info("handling utterance")
+                self.log.info("converse called - handling utterance")
+                return True
         return False
 
     def stop(self):
@@ -139,44 +169,40 @@ def get_care_team(self):
             #      self.log.info(lastname)
             firstname = name_dct['given'][0]
             #      self.log.info(firstname)
-            fullname = firstname + " " + lastname + ", " + specialty
+            full_listing = firstname + " " + lastname + ", " + specialty
 
-            self.log.info(fullname)
+            self.log.info(full_listing)
 
-            self.provider_list.append(fullname)
-        #      self.provider_list.append(firstname)
-        #     self.provider_list.append(lastname)
-        #      self.provider_list.append(specialty)
+            self.provider_list.append(full_listing)
 
         care_team_file.close()
     return True
 
 
-def find_first(self, ampm):
+def find_times(self, search_date, ampm):
     # get the current date and time
     availableslots = None
-    today = datetime.date.today()
 
-    tomorrow = datetime.date(today.year, today.month, today.day + 1)
+    if not search_date:
+        search_date = datetime.date.today()
 
     # self.log.info(today)
     # self.log.info(tomorrow)
 
-    searchdate = today
+    # searchdate = today
 
     for day in range(1, 14):
 
-        availableslots = mt_find_available_appts(self, searchdate, ampm)
-        if len(availableslots["time"]) > 0:
+        availableslots = mt_find_available_appts(self, search_date, ampm)
+        if len(availableslots["times"]) > 0:
             self.log.info(availableslots["date"])
             #               meditech.revokeToken(handlerInput); // see revokeToken for why to call this now
             break
 
-        # searchdate = datetime.date(searchdate.year, searchdate.month, searchdate.day + 1)
-        self.log.info("searchdate = %s", searchdate)
-        current = datetime.date.toordinal(searchdate)
-        searchdate = datetime.date.fromordinal(current + 1)
-        self.log.info("next searchdate = %s", searchdate)
+        self.log.info(f"search_date = {search_date}")
+        current = datetime.date.toordinal(search_date)
+        search_date = datetime.date.fromordinal(current + 1)
+        self.log.info(f"next search_date = {search_date}")
 
     return availableslots
 
@@ -185,7 +211,7 @@ def mt_find_available_appts(self, searchdate, ampm):
     # for a given searchDate
 
     #    availabletimes = []
-    availableslots = {"date": "", "time": [], "id": []}
+    availableslots = {"date": "", "times": [], "id": []}
 
     # Get a Meditech token
 
@@ -236,7 +262,6 @@ def mt_find_available_appts(self, searchdate, ampm):
     }
 
     begin = searchdate
-    # end = datetime.date(searchdate.year, searchdate.month, searchdate.day + 1)
 
     current = datetime.date.toordinal(begin)
     end = datetime.date.fromordinal(current + 1)
@@ -270,7 +295,7 @@ def mt_find_available_appts(self, searchdate, ampm):
             # means there's no appointments available
             return availableslots
 
-        time = []
+        times = []
         apptid = []
         date = ""
 
@@ -306,25 +331,20 @@ def mt_find_available_appts(self, searchdate, ampm):
 
             if ampm in ["am", "AM", "MO", "morning"]:
                 if meridien == "AM":
-                    start += ' A.M.'  # needed to get the tts to pronounce the letters, not treat it as a word
                     save = True
             elif ampm in ["pm", "PM", "AF", "afternoon"]:
                 if meridien == "PM":
-                    start += ' P.M.'
                     save = True
             else:
-                if meridien == "AM":
-                    start += ' A.M.'
-                else:
-                    start += ' P.M.'
                 save = True
 
             if save:
-                # start += ',,,'  # some delays since SSML isn't supported yet
-                time.append(start)
+                start += " " + meridien
+                start += ',,'  # some delays since SSML isn't supported yet
+                times.append(start)
                 apptid.append(apptslots["entry"][index]["resource"]["id"])
 
-        availableslots = {"date": date, "time": time, "id": apptid}
+        availableslots = {"date": date, "ord": current, "times": times, "id": apptid}
         self.log.info(availableslots)
 
     else:
