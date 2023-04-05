@@ -1,1 +1,1 @@
-I found the following times for {date},,, If you'd like to look at times for a different date, just ask for that date,,, The times available for {date} are: {times}
+<speak>I found the following appointment times on {date}.</speak>

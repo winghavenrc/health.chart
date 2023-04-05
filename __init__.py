@@ -6,7 +6,7 @@ import requests
 from mycroft.skills import MycroftSkill, intent_handler
 import mycroft.util.time
 import mycroft.util.parse
-
+from mycroft.messagebus.message import Message
 
 # import os
 # import openai
@@ -23,11 +23,17 @@ class HealthChart(MycroftSkill):
 
     @intent_handler('schedule.time.intent')
     def handle_scheduletime_intent(self, message):
-        self.log.info('Schedule time intent %s', message.data.get('time'))
+        self.log.info(f"Schedule time intent {message.serialize()}")
+        self.log.info(f"Time to schedule is {message.data.get('time')}")
 
-    @intent_handler('repeat.intent')
-    def handle_repeat_intent(self, message):
-        self.log.info('Repeat intent %s', message)
+    @intent_handler('schedule.time.intent')
+    def handle_scheduletime_intent(self, message):
+        self.log.info(f"Schedule time intent {message.serialize()}")
+        self.log.info(f"Time to schedule is {message.data.get('time')}")
+
+    @intent_handler('main.menu.intent')
+    def handle_mainmenu_intent(self, message):
+        self.log.info('Main menu intent %s', message)
 
     @intent_handler('chart.health.intent')
     def handle_chart_health(self, message):
@@ -85,54 +91,70 @@ class HealthChart(MycroftSkill):
                     available_slots = find_times(self, search_date, ampm)
                     if len(available_slots["times"]) > 0:
                         self.speak_dialog('speak.foundtimes', data={
-                                        "date": available_slots["date"], "times": available_slots["times"]},
+                            "date": available_slots["date"], "times": available_slots["times"]},
                                           expect_response=False, wait=True)
                         # for idx in range(0, len(available_slots["times"])):
                         #     self.speak(available_slots["times"][idx], expect_response=False, wait=True)
-                        visit_time = self.get_response('get.appt_time', num_retries=2)
-                        self.log.info(f"visit time = {visit_time}")
+                        time_response = self.get_response('get.appt_time', data={
+                            "date": available_slots["date"], "times": available_slots["times"]},
+                                                          num_retries=2)
+                        self.log.info(f"visit time = {time_response}")
 
-                        ext_time = mycroft.util.extract_datetime(visit_time,
-                                                                 datetime.datetime.fromordinal(available_slots['ord']))
-                        if ext_time is None:
-                            # Define the regular expression pattern for the time string
-                            pattern = r"(\d{1,2})\s*([ap])\s*([mM])"
-
-                            # Replace the pattern in the input string with the desired format
-                            visit_time = re.sub(pattern, r'\1 \2\3', visit_time)
-                            ext_time = mycroft.util.extract_datetime(visit_time)
-
-                        self.log.info(f"extracted time = {ext_time}")
-
-                        if ext_time is not None:
-                            search_date = ext_time[0].date()
-                            visit_time = ext_time[0].time()
-                            self.log.info(f"extracted search date = {search_date}")
-                            self.log.info(f"extracted search time = {visit_time}")
-
-                            date = ext_time[0].strftime("%A %B %-d")
-                            self.log.info(f"formatted date = {date}")
-
-                            req_time = ext_time[0].strftime("%-I:%-M %p")
-                            meridien = ext_time[0].strftime("%p")
-
-                            if prep_time(self, req_time, meridien) in available_slots["times"]:
-                                self.log.info(f"NEED TO BOOK THIS TIME!!!!")
-                                break
-                            else:
-                                """ Are you wanting a different date?"""
-                                self.log.info(f"available_slots[ord] = {available_slots['ord']}")
-                                self.log.info(f"requested date ord = {search_date.toordinal()}")
-                                if available_slots["ord"] == search_date.toordinal():
-                                    self.speak_dialog('invalid.time', data={"time": req_time}, expect_response=False,
-                                                      wait=False)
-                                else:
-                                    self.log.info("Need to get more times on a different date!!!")
+                        # Look for a requested time or figure out what they're intent is
+                        # First look for a typical intent
+                        if self.voc_match(time_response, "repeat", exact=False):
+                            self.log.info("REPEAT THOSE TIMES")
                         else:
-                            self.log.info("No time extracted")
-                            if self.voc_match(visit_time, "repeat"):
-                                pass
+                            # STT is outputing 'A M' and 'P M' instead of AM/PM so the extract doesn't work... fix that
+                            pattern = r"(\d{1,2})\s*([ap])\s*([mM])"
+                            # Replace the pattern in the input string with the desired format
+                            time_response = re.sub(pattern, r'\1 \2\3', time_response)
+                            # Oh, and it's also not recognizing 'am' very well, e.g. 8 am is output as '8 m', fix that
+                            time_response = re.sub(r'(\d+)\s*m', r'\1 am', time_response)
+                            extracted_time = mycroft.util.extract_datetime(time_response,
+                                                                           datetime.datetime.fromordinal(
+                                                                               available_slots['ord']))
+                            self.log.info(f"extracted time = {extracted_time}")
+
+                            if extracted_time is not None:  # some sort of time was found
+                                search_date = extracted_time[0].date()
+                                self.log.info(f"extracted search date = {search_date}")
+                                self.log.info(f"extracted search time = {extracted_time[0].time()}")
+                                # date = extracted_time[0].strftime("%A %B %-d")
+                                # self.log.info(f"formatted date = {date}")
+                                req_time = extracted_time[0].strftime("%-I:%-M %p")
+                                meridien = extracted_time[0].strftime("%p")
+
+                                if prep_time(self, req_time, meridien) in available_slots["times"]:
+                                    self.log.info(f"NEED TO BOOK THIS TIME!!!!")
+                                    self.handle_scheduletime_intent(
+                                        Message(msg_type='health.chart:schedule.time.intent',
+                                                data={
+                                                    "skill_id": "health.chart",
+                                                    "utterance": f"I want to schedule {req_time}",
+                                                    "time": req_time}))
+                                    break
+                                else:
+                                    """ Wanting a different time of the same day?"""
+                                    self.log.info(f"requested meridien = {meridien}")
+                                    if self.voc_match(time_response, "meridien", exact=False):
+                                        self.log.info("Try the other part of the day")
+                                        ampm = meridien
+                                        break
+
+                                    """ Are you wanting a different date?"""
+                                    self.log.info(f"available_slots[ord] = {available_slots['ord']}")
+                                    self.log.info(f"requested date ord = {search_date.toordinal()}")
+                                    if available_slots["ord"] == search_date.toordinal():
+                                        self.speak_dialog('invalid.time', data={"time": req_time},
+                                                          expect_response=False,
+                                                          wait=False)
+                                        break
+                                    else:
+                                        self.log.info("Need to get more times on a different date!!!")
+                                        break
                             else:
+                                self.log.info("No time extracted")
                                 break
 
     def converse(self, message=None):
@@ -145,6 +167,10 @@ class HealthChart(MycroftSkill):
 
     def stop(self):
         pass
+
+
+def create_skill():
+    return HealthChart()
 
 
 def get_care_team(self):
@@ -195,7 +221,7 @@ def find_times(self, search_date, ampm):
 
     if not search_date:
         """ Always start with tomorrow - too late to schedule for today 
-        """
+            """
         search_date = datetime.date.today()
         current = datetime.date.toordinal(search_date)
         search_date = datetime.date.fromordinal(current + 1)
@@ -225,7 +251,7 @@ def mt_find_available_appts(self, searchdate, ampm):
     # for a given searchDate
 
     #    availabletimes = []
-    availableslots = {"date": "", "ord": 0, "times": [], "id": []}
+    availableslots = {"date": "", "ord": 0, "meridien": ampm, "times": [], "id": []}
 
     # Get a Meditech token
 
@@ -371,10 +397,7 @@ def prep_time(self, start, meridien):
     else:
         start = hour[0] + ':' + mins[0] + ' '
     start += " " + meridien
-    start += ',,'  # some delays since SSML isn't supported yet
+    # start += ',,'  # some delays since SSML isn't supported yet
 
     return start
 
-
-def create_skill():
-    return HealthChart()
