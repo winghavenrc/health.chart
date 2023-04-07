@@ -1,12 +1,14 @@
 import datetime
 import json
 import re
+import time
 
 import requests
 from mycroft.skills import MycroftSkill, intent_handler
 import mycroft.util.time
 import mycroft.util.parse
 from mycroft.messagebus.message import Message
+
 
 # import os
 # import openai
@@ -26,14 +28,16 @@ class HealthChart(MycroftSkill):
         self.log.info(f"Schedule time intent {message.serialize()}")
         self.log.info(f"Time to schedule is {message.data.get('time')}")
 
-    @intent_handler('schedule.time.intent')
+    @intent_handler('repeat.intent')
     def handle_scheduletime_intent(self, message):
-        self.log.info(f"Schedule time intent {message.serialize()}")
-        self.log.info(f"Time to schedule is {message.data.get('time')}")
+        self.log.info(f"Repeat intent {message.serialize()}")
 
     @intent_handler('main.menu.intent')
     def handle_mainmenu_intent(self, message):
-        self.log.info('Main menu intent %s', message)
+        self.log.info(f"Main menu intent {message.serialize()}")
+        self.speak_dialog('main.menu', expect_response=True, wait=True)
+        time.sleep(5)
+        self.speak_dialog('wake.instructions', expect_response=False, wait=False)
 
     @intent_handler('chart.health.intent')
     def handle_chart_health(self, message):
@@ -132,7 +136,7 @@ class HealthChart(MycroftSkill):
                                                 data={
                                                     "skill_id": "health.chart",
                                                     "utterance": f"I want to schedule {req_time}",
-                                                    "time": req_time}))
+                                                    "time": req_time, "lang": "en-us"}))
                                     break
                                 else:
                                     """ Wanting a different time of the same day?"""
@@ -156,9 +160,13 @@ class HealthChart(MycroftSkill):
                             else:
                                 self.log.info("No time extracted")
                                 break
+                self.handle_mainmenu_intent(Message(msg_type='health.chart:main.menu.intent',
+                                                    data={"skill_id": "health.chart",
+                                                          "utterance": f"Take me to the main menu",
+                                                          "lang": "en-us"}))
 
     def converse(self, message=None):
-        self.log.info(f"message.data = {message.data}")
+        self.log.info(f"Converse called: message.data = {message.data}")
         for utterance in message.data.get("utterances"):
             if self.voc_match(utterance, "repeat"):
                 self.log.info("converse called - handling utterance")
@@ -400,4 +408,3 @@ def prep_time(self, start, meridien):
     # start += ',,'  # some delays since SSML isn't supported yet
 
     return start
-
